@@ -1,0 +1,12 @@
+# Berechtigung -> Schreibschutz in OneDrive entfernen
+# ---------------------------------------------------
+Get-ChildItem -Path "C:\Users\schmi\OneDrive\Desktop\course\venv\Lib" -Recurse | ForEach-Object {
+    $_.Attributes = $_.Attributes -bxor [System.IO.FileAttributes]::ReadOnly
+}
+
+Get-ChildItem -Path "C:\Users\schmi\OneDrive\Desktop\course\DataVault" -Recurse | ForEach-Object {
+    $_.Attributes = $_.Attributes -bxor [System.IO.FileAttributes]::ReadOnly
+}
+
+
+C:\Users\schmi\OneDrive\Desktop\course\DataVault>
